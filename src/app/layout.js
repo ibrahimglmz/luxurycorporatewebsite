@@ -3,6 +3,7 @@ import "./globals.css";
 import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Link from "next/link";
+import Navbar from "./components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,93 +15,51 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "İbrahim Gülmez | Lüks Kurumsal Çözümler",
-  description: "Lüksün ve inovasyonun buluştuğu kurumsal dünyaya hoş geldiniz.",
-};
-
-function Navbar() {
-  return (
-    <nav className="w-full flex flex-col md:flex-row items-center justify-center py-4 bg-navy shadow-md fixed top-0 left-0 z-30 relative pl-0 md:pl-40 px-4">
-      <div className="flex w-full md:w-auto justify-center md:justify-start mb-2 md:mb-0 md:absolute md:left-6 items-center gap-2">
-        <span className="w-8 h-8 flex items-center justify-center rounded-full bg-gold text-navy font-extrabold text-lg shadow-gold border-2 border-white">İG</span>
-        <span className="font-bold text-xl text-gold">İbrahim Gülmez</span>
-      </div>
-      <ul className="flex flex-col md:flex-row gap-4 md:gap-8 text-lg font-semibold w-full md:w-auto justify-center items-center">
-        <li>
-          <Link href="/" className="hover:text-gold text-white transition-colors">Ana Sayfa</Link>
-        </li>
-        <li>
-          <Link href="/hakkinda" className="hover:text-gold text-white transition-colors">Hakkımızda</Link>
-        </li>
-        <li>
-          <Link href="/ekibimiz" className="hover:text-gold text-white transition-colors">Ekibimiz</Link>
-        </li>
-        <li>
-          <Link href="/iletisim" className="hover:text-gold text-white transition-colors">İletişim</Link>
-        </li>
-      </ul>
-      <div className="absolute right-6 flex gap-3 items-center text-xl">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition">
-          <FaFacebook color="#FFD700" />
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition">
-          <FaInstagram color="#FFD700" />
-        </a>
-        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition">
-          <FaTiktok color="#FFD700" />
-        </a>
-        <a href="https://wa.me/905555555555" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition">
-          <FaWhatsapp color="#FFD700" />
-        </a>
-        <a href="mailto:info@luxurycorporate.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition">
-          <MdEmail color="#FFD700" />
-        </a>
-      </div>
-    </nav>
-  );
-}
-
 function Footer() {
   return (
-    <footer className="w-full bg-navy border-t border-gold py-6 flex flex-col md:flex-row items-center justify-between px-6 text-gold text-sm gap-4 md:gap-0">
-      <div className="flex items-center gap-2 mb-2 md:mb-0">
-        <span className="w-6 h-6 flex items-center justify-center rounded-full bg-gold text-navy font-extrabold text-base shadow-gold border-2 border-white">İG</span>
-        <span className="font-bold">İbrahim Gülmez</span>
-        <span className="mx-2">|</span>
-        <span>© {new Date().getFullYear()} Tüm Hakları Saklıdır.</span>
+    <footer className="w-full bg-white border-t border-[#E5E7EB] py-10 px-4 flex flex-col items-center justify-center text-[#1E293B] text-sm md:text-base">
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Sol: Hızlı Erişim */}
+        <div className="flex flex-col items-center md:items-start gap-3">
+          <span className="font-semibold text-base mb-1">Hızlı Erişim</span>
+          <Link href="/" className="hover:underline hover:text-[#3B82F6]">Ana Sayfa</Link>
+          <Link href="/hakkinda" className="hover:underline hover:text-[#3B82F6]">Hakkımızda</Link>
+          <Link href="/ekibimiz" className="hover:underline hover:text-[#3B82F6]">Ekibimiz</Link>
+          <Link href="/iletisim" className="hover:underline hover:text-[#3B82F6]">İletişim</Link>
+        </div>
+
+        {/* Orta: Logo ve Sosyal Medya */}
+        <div className="flex flex-col items-center gap-3">
+          <Link href="/" className="font-bold text-lg md:text-xl hover:underline">İbrahim Gülmez</Link>
+          <div className="flex gap-4 text-xl text-[#64748B]">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#3B82F6]"><FaFacebook /></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#3B82F6]"><FaInstagram /></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#3B82F6]"><FaTiktok /></a>
+            <a href="https://wa.me/905555555555" target="_blank" rel="noopener noreferrer" className="hover:text-[#3B82F6]"><FaWhatsapp /></a>
+            <a href="mailto:info@luxurycorporate.com" className="hover:text-[#3B82F6]"><MdEmail /></a>
+          </div>
+        </div>
+
+        {/* Sağ: Yasal Linkler */}
+        <div className="flex flex-col items-center md:items-end gap-3">
+          <span className="font-semibold text-base mb-1">Tüm hakları saklıdır. | KVKK| Bilgi Güvenliği Politikası</span>
+          <Link href="/gizlilik-politikasi" className="hover:underline hover:text-[#3B82F6]">Gizlilik Politikası</Link>
+          <Link href="/kullanim-kosullari" className="hover:underline hover:text-[#3B82F6]">Kullanım Koşulları</Link>
+          <Link href="/cerez-politikasi" className="hover:underline hover:text-[#3B82F6]">Çerez Politikası</Link>
+        </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
-        <div className="flex gap-3 items-center text-xl">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition">
-            <FaFacebook color="#FFD700" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition">
-            <FaInstagram color="#FFD700" />
-          </a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition">
-            <FaTiktok color="#FFD700" />
-          </a>
-          <a href="https://wa.me/905555555555" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition">
-            <FaWhatsapp color="#FFD700" />
-          </a>
-          <a href="mailto:info@luxurycorporate.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition">
-            <MdEmail color="#FFD700" />
-          </a>
-        </div>
-        <div className="flex gap-3 items-center text-xs mt-2 md:mt-0">
-          <Link href="/gizlilik-politikasi" className="hover:underline text-gold">Gizlilik Politikası</Link>
-          <span className="hidden md:inline">|</span>
-          <Link href="/kullanim-kosullari" className="hover:underline text-gold">Kullanım Koşulları</Link>
-          <span className="hidden md:inline">|</span>
-          <Link href="/cerez-politikasi" className="hover:underline text-gold">Çerez Politikası</Link>
-          <span className="hidden md:inline">|</span>
-          <Link href="/ekibimiz" className="hover:underline text-gold">Ekibimiz</Link>
-        </div>
+
+      <div className="w-full text-center mt-6 text-[11px] md:text-sm text-[#64748B] flex flex-nowrap justify-center items-center gap-1 whitespace-nowrap">
+        <span>© {new Date().getFullYear()} Tüm Hakları Saklıdır.</span>
+        <span>|</span>
+        <Link href="/" className="hover:underline hover:text-[#3B82F6]">KVKK</Link>
+        <span>|</span>
+        <Link href="/" className="hover:underline hover:text-[#3B82F6]">Bilgi Güvenliği Politikası</Link>
       </div>
     </footer>
   );
 }
+
 
 export default function RootLayout({ children }) {
   return (
@@ -112,7 +71,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <div className="pt-14 min-h-[60vh] flex flex-col justify-between">
+        <div className="min-h-[60vh] flex flex-col justify-between">
           <div>{children}</div>
           <Footer />
         </div>

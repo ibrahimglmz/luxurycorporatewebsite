@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --color-gold: #FFD700;
-  --color-gold-dark: #F5C518;
-  --color-navy: #1A2238;
-  --color-navy-dark: #151a2e;
-  --color-light: #F5F6FA;
-  --color-gray: #666;
-  --color-dark: #222;
+  --color-bg: #C0C0C0;         /* Ana arka plan artık gümüş */
+  --color-section: #F8FAFC;    /* Bölüm arka planı */
+  --color-card: #FFFFFF;       /* Kart arka planı */
+  --color-title: #1E293B;      /* Başlık metni */
+  --color-text: #475569;       /* İçerik metni */
+  --color-accent: #EAB308;     /* Vurgu/altın */
+  --color-secondary: #0E7490;  /* İkincil vurgu */
+  --color-warning: #DC2626;    /* Uyarı */
+  --color-neutral: #D1D5DB;    /* Nötr detay */
+  --color-footertext: #64748B; /* Footer yazı */
+  --color-navbarfooter: #C0C0C0; /* Navbar ve footer arka planı */
 }
 
 @theme inline {
@@ -32,39 +34,26 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.bg-gold {
-  background-color: var(--color-gold);
-}
-.bg-navy {
-  background-color: var(--color-navy);
-}
-.bg-light {
-  background-color: var(--color-light);
-}
-.text-gold {
-  color: var(--color-gold);
-}
-.text-navy {
-  color: var(--color-navy);
-}
-.text-dark {
-  color: var(--color-dark);
-}
-.text-gray {
-  color: var(--color-gray);
-}
-.border-gold {
-  border-color: var(--color-gold);
-}
-.border-navy {
-  border-color: var(--color-navy);
-}
-.shadow-gold {
-  box-shadow: 0 4px 24px 0 rgba(255, 215, 0, 0.15);
-}
-.shadow-navy {
-  box-shadow: 0 4px 24px 0 rgba(26, 34, 56, 0.15);
-}
+.bg-bg { background-color: var(--color-bg); }
+.bg-section { background-color: var(--color-section); }
+.bg-card { background-color: var(--color-card); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-warning { background-color: var(--color-warning); }
+.bg-navbarfooter { background-color: var(--color-navbarfooter); }
+.text-title { color: var(--color-title); }
+.text-text { color: var(--color-text); }
+.text-accent { color: var(--color-accent); }
+.text-secondary { color: var(--color-secondary); }
+.text-warning { color: var(--color-warning); }
+.text-neutral { color: var(--color-neutral); }
+.text-footer { color: var(--color-footertext); }
+.border-accent { border-color: var(--color-accent); }
+.border-secondary { border-color: var(--color-secondary); }
+.border-warning { border-color: var(--color-warning); }
+.border-neutral { border-color: var(--color-neutral); }
+.shadow-primary { box-shadow: 0 4px 24px 0 rgba(58,90,64,0.10); }
+.shadow-action { box-shadow: 0 4px 24px 0 rgba(82,121,111,0.10); }
 
 @keyframes fade-in-slow {
   0% { opacity: 0; }
