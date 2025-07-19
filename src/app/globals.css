@@ -3,6 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-gold: #FFD700;
+  --color-gold-dark: #F5C518;
+  --color-navy: #1A2238;
+  --color-navy-dark: #151a2e;
+  --color-light: #F5F6FA;
+  --color-gray: #666;
+  --color-dark: #222;
 }
 
 @theme inline {
@@ -23,4 +30,71 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-gold {
+  background-color: var(--color-gold);
+}
+.bg-navy {
+  background-color: var(--color-navy);
+}
+.bg-light {
+  background-color: var(--color-light);
+}
+.text-gold {
+  color: var(--color-gold);
+}
+.text-navy {
+  color: var(--color-navy);
+}
+.text-dark {
+  color: var(--color-dark);
+}
+.text-gray {
+  color: var(--color-gray);
+}
+.border-gold {
+  border-color: var(--color-gold);
+}
+.border-navy {
+  border-color: var(--color-navy);
+}
+.shadow-gold {
+  box-shadow: 0 4px 24px 0 rgba(255, 215, 0, 0.15);
+}
+.shadow-navy {
+  box-shadow: 0 4px 24px 0 rgba(26, 34, 56, 0.15);
+}
+
+@keyframes fade-in-slow {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.animate-fade-in-slow {
+  animation: fade-in-slow 1.2s cubic-bezier(0.4,0,0.2,1) 0.2s forwards;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient-move {
+  background-size: 200% 200%;
+  animation: gradient-move 8s ease-in-out infinite;
+}
+
+@keyframes slide-fade-in {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-fade-in {
+  animation: slide-fade-in 1.2s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;
+}
+@keyframes scale-fade-in {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-scale-fade-in {
+  animation: scale-fade-in 1s cubic-bezier(0.4,0,0.2,1) 0.5s forwards;
 }
