@@ -24,10 +24,7 @@ export default function HomePage() {
     <>
       <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg">
         {/* Video Loader ile Video */}
-        <VideoLoader 
-          videoSrc="/drone1_parca1.mp4"
-          onVideoLoaded={handleVideoLoaded}
-        >
+        <VideoLoader onVideoLoaded={handleVideoLoaded}>
           {/* Arka Plan Video */}
           <video
             className="absolute top-0 left-0 w-full h-full object-cover z-0"
