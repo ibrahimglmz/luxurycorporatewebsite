@@ -19,6 +19,8 @@ export default function HomePage() {
           loop
           muted
           playsInline
+          preload="metadata"
+          poster="/drone1-poster.jpg"
         />
         {/* Koyu bir overlay ile yazıyı öne çıkar */}
         <div className="absolute top-0 left-0 w-full h-full bg-gold-gradient animate-gradient-move z-10" />

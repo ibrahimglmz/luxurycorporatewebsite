@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --color-bg: #C0C0C0;         /* Ana arka plan artık gümüş */
   --color-section: #F8FAFC;    /* Bölüm arka planı */

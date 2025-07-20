@@ -14,6 +14,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#1E293B" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={inter.className}>
         <Navbar />
         <main className="min-h-screen">
