@@ -23,6 +23,7 @@ export default function Iletisim() {
   const [formData, setFormData] = useState({ email: '', phone: '', subject: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
+  const [mapLoaded, setMapLoaded] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -222,6 +223,14 @@ export default function Iletisim() {
           <div className="bg-white rounded-2xl p-6 md:p-8 border border-[#D1D5DB] hover:border-[#3B82F6] transition-all duration-300 shadow">
             <h2 className="text-2xl md:text-3xl font-bold text-[#1E293B] mb-6 md:mb-8">Konum</h2>
             <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
+              {!mapLoaded && (
+                <div className="absolute inset-0 bg-[#F1F5F9] flex items-center justify-center z-10">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#3B82F6] mx-auto mb-4"></div>
+                    <p className="text-[#64748B] text-lg font-medium">Merak etmeyin, hemen konum bilgisini güncelliyoruz...</p>
+                  </div>
+                </div>
+              )}
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.726930934112!2d32.8375202!3d39.9250546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f1e2b1e2b1b%3A0x1e1e1e1e1e1e1e1e!2sAn%C4%B1tkabir!5e0!3m2!1str!2str!4v1710000000000!5m2!1str!2str"
                 width="100%" 
@@ -230,6 +239,7 @@ export default function Iletisim() {
                 allowFullScreen="" 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
+                onLoad={() => setMapLoaded(true)}
               ></iframe>
             </div>
           </div>
