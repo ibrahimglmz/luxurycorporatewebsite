@@ -18,12 +18,12 @@ const SERTIFIKALAR = [
     aciklama: "Enerjiyi verimli kullanarak sürdürülebilir üretimi destekliyoruz."
   },
   {
-    baslik: "EN 124 – Döküm Kapaklar İçin Avrupa Standardı",
+    baslik: "EN 124 – Endüstriyel Ürünler İçin Avrupa Standardı",
     aciklama: "Ürünlerimiz Avrupa normlarına uygundur."
   },
   {
-    baslik: "TS EN 1561 / TS EN 1563 – Dökme Demir Üretim Standardı",
-    aciklama: "Gri dökme demir ve küresel grafitli dökme demir (sfero) üretimlerimiz bu standartlara uygundur."
+    baslik: "TS EN 1561 / TS EN 1563 – Endüstriyel Üretim Standardı",
+    aciklama: "Endüstriyel üretim süreçlerimiz bu standartlara uygundur."
   },
   {
     baslik: "CE Belgesi",
@@ -37,17 +37,17 @@ const SERTIFIKALAR = [
 
 export default function Sertifikalarimiz() {
   return (
-    <section className="w-full bg-section py-20 px-4 flex flex-col items-center">
-      <h2 className="text-3xl md:text-4xl font-extrabold mb-12 text-title tracking-tight">Sertifikalarımız</h2>
-      <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section className="w-full bg-section py-12 sm:py-20 px-4 flex flex-col items-center">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 sm:mb-12 text-title tracking-tight text-center">Sertifikalarımız</h2>
+      <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
         {SERTIFIKALAR.map((s, i) => (
           <div
             key={i}
-            className="bg-card rounded-lg shadow p-6 border border-neutral flex flex-col group hover:scale-105 hover:shadow-lg hover:border-accent transition-transform duration-300"
+            className="bg-card rounded-lg shadow p-4 sm:p-6 border border-neutral flex flex-col group hover:scale-105 hover:shadow-lg hover:border-accent transition-transform duration-300"
           >
-            <span className="font-bold text-title text-lg mb-2">{s.baslik}</span>
+            <span className="font-bold text-title text-base sm:text-lg mb-2">{s.baslik}</span>
             <div className="h-1 w-16 bg-accent rounded mb-3" />
-            <span className="text-text text-sm">{s.aciklama}</span>
+            <span className="text-text text-xs sm:text-sm">{s.aciklama}</span>
           </div>
         ))}
       </div>

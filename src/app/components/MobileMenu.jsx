@@ -19,11 +19,11 @@ export default function MobileMenu() {
     <>
       {/* Hamburger Icon */}
       <button
-        className="md:hidden p-2 z-50 relative rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3B82F6] hover:bg-[#F1F5F9] transition-colors"
         aria-label="Menüyü Aç"
         onClick={() => setOpen(true)}
       >
-        <FaBars size={26} className="text-[#1E293B]" />
+        <FaBars size={24} className="text-[#1E293B]" />
       </button>
 
       {/* Overlay (yarı saydam, tıklanınca menüyü kapatır) */}
@@ -36,24 +36,23 @@ export default function MobileMenu() {
 
       {/* Drawer Menü */}
       <div
-        className={`fixed top-0 right-0 h-full w-72 z-50 bg-navbarfooter shadow-lg flex flex-col justify-between transition-transform duration-300 ease-in-out
+        className={`fixed top-0 right-0 h-full w-80 z-50 bg-white shadow-xl flex flex-col justify-between transition-transform duration-300 ease-in-out
         ${open ? "translate-x-0" : "translate-x-full"}`}
-        style={{ maxWidth: 320 }}
       >
         {/* Üst: Firma Adı ve Kapat */}
         <div>
-          <div className="flex items-center justify-between p-4 border-b border-neutral">
-            <span className="text-title text-2xl font-extrabold mx-auto">İbrahim Gülmez</span>
+          <div className="flex items-center justify-between p-6 border-b border-[#E5E7EB]">
+            <span className="text-[#1E293B] text-xl font-bold">İbrahim Gülmez</span>
             <button
-              className="p-2 ml-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="p-2 rounded-lg hover:bg-[#F1F5F9] focus:outline-none focus:ring-2 focus:ring-[#3B82F6] transition-colors"
               aria-label="Menüyü Kapat"
               onClick={() => setOpen(false)}
             >
-              <FaTimes size={28} className="text-title" />
+              <FaTimes size={24} className="text-[#1E293B]" />
             </button>
           </div>
           {/* Navigation Links */}
-          <nav className="flex flex-col items-start gap-6 px-8 mt-8 text-title text-lg font-semibold">
+          <nav className="flex flex-col px-6 mt-6">
             {[
               { href: "/", label: "Ana Sayfa" },
               { href: "/hakkinda", label: "Hakkımızda" },
@@ -63,7 +62,7 @@ export default function MobileMenu() {
               <Link
                 key={href}
                 href={href}
-                className="hover:text-accent transition"
+                className="py-4 px-4 text-[#1E293B] hover:text-[#3B82F6] hover:bg-[#F1F5F9] rounded-lg font-medium transition-colors"
                 onClick={() => setOpen(false)}
               >
                 {label}
@@ -72,15 +71,15 @@ export default function MobileMenu() {
           </nav>
         </div>
         {/* Alt: Sosyal ikonlar ve copyright */}
-        <div className="flex flex-col gap-4 pb-6">
-          <div className="flex justify-center gap-5 px-8">
+        <div className="flex flex-col gap-6 p-6 border-t border-[#E5E7EB]">
+          <div className="flex justify-center gap-6">
             <SocialIcon href="https://facebook.com" Icon={FaFacebook} />
             <SocialIcon href="https://instagram.com" Icon={FaInstagram} />
             <SocialIcon href="https://tiktok.com" Icon={FaTiktok} />
             <SocialIcon href="https://wa.me/905555555555" Icon={FaWhatsapp} />
             <SocialIcon href="mailto:info@luxurycorporate.com" Icon={MdEmail} />
           </div>
-          <div className="text-center text-xs text-title mt-2">© 2025 Tüm Hakları Saklıdır.</div>
+          <div className="text-center text-xs text-[#64748B]">© 2025 Tüm Hakları Saklıdır.</div>
         </div>
       </div>
     </>
@@ -93,9 +92,9 @@ function SocialIcon({ href, Icon }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-gray-300 hover:text-yellow-400 transition transform hover:scale-110"
+      className="text-[#64748B] hover:text-[#3B82F6] transition-colors transform hover:scale-110 p-2 rounded-lg hover:bg-[#F1F5F9]"
     >
-      <Icon size={22} />
+      <Icon size={20} />
     </a>
   );
 }
