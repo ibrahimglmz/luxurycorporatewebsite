@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import YonetimSlider from "./components/YonetimSlider";
 import Sertifikalarimiz from "./components/Sertifikalarimiz";
 import AnimatedStats from "./components/AnimatedStats";
@@ -8,39 +8,14 @@ import Newsletter from "./components/Newsletter";
 import FAQ from "./components/FAQ";
 import SocialProof from "./components/SocialProof";
 import WhyUs from "./components/WhyUs";
-import VideoLoader from "./components/VideoLoader";
+import VideoCache from "./components/VideoCache";
 
 export default function HomePage() {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
-  const handleVideoLoaded = () => {
-    setVideoLoaded(true);
-    // Video tamamen yüklendiğinde localStorage'a kaydet
-    localStorage.setItem('videoLoaded', 'true');
-    localStorage.setItem('videoTimestamp', Date.now().toString());
-  };
-
   return (
     <>
       <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg">
-        {/* Video Loader ile Video */}
-        <VideoLoader onVideoLoaded={handleVideoLoaded}>
-          {/* Arka Plan Video */}
-          <video
-            className="absolute top-0 left-0 w-full h-full object-cover z-0"
-            src="/drone1_parca1.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            poster="/drone1-poster.jpg"
-            crossOrigin="anonymous"
-            onError={(e) => {
-              console.error('Video yükleme hatası:', e);
-            }}
-          />
-        </VideoLoader>
+        {/* Video Cache ile Video */}
+        <VideoCache videoSrc="/drone1_parca1.mp4" />
         
         {/* Koyu bir overlay ile yazıyı öne çıkar */}
         <div className="absolute top-0 left-0 w-full h-full bg-gold-gradient animate-gradient-move z-10" />

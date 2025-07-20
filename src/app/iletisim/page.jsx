@@ -41,7 +41,7 @@ export default function Iletisim() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#F1F5F9] to-[#C0C0C0]">
+    <main className="min-h-screen bg-gradient-to-br from-[#F1F5F9] to-[#C0C0C0] pt-16 sm:pt-20">
       {/* Hero Section */}
       <section className="relative h-[300px] md:h-[400px] flex items-center justify-center">
         <div className="absolute inset-0">
@@ -199,7 +199,7 @@ export default function Iletisim() {
                     <FaTiktok className="w-6 h-6" />
                   </a>
                   <a 
-                    href="https://wa.me/905555555555"
+                    href="https://wa.me/905551234567"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#64748B] hover:text-[#3B82F6] transition-colors transform hover:scale-110"
@@ -207,9 +207,7 @@ export default function Iletisim() {
                     <FaWhatsapp className="w-6 h-6" />
                   </a>
                   <a 
-                    href="mailto:info@luxurycorporate.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="mailto:info@ornekfirma.com"
                     className="text-[#64748B] hover:text-[#3B82F6] transition-colors transform hover:scale-110"
                   >
                     <MdEmail className="w-6 h-6" />

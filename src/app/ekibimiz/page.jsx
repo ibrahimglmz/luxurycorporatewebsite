@@ -113,7 +113,7 @@ function LevelHeader({ title, description, color }) {
 
 export default function OrganizationChart() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 pt-16 sm:pt-20">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 py-20">
         <div className="absolute inset-0 bg-black/20" />

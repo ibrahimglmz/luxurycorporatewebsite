@@ -26,7 +26,7 @@ const KURUCU_ORTAKLAR = [
 
 export default function Hakkinda() {
   return (
-    <main className="min-h-screen bg-bg">
+    <main className="min-h-screen bg-bg pt-16 sm:pt-20">
       {/* Hero görsel */}
       <div className="relative w-full aspect-[16/7] md:aspect-[16/5] overflow-hidden">
         <Image
