@@ -96,3 +96,57 @@ body {
 .animate-scale-fade-in {
   animation: scale-fade-in 1s cubic-bezier(0.4,0,0.2,1) 0.5s forwards;
 }
+
+/* Video yükleme animasyonları */
+@keyframes video-loader-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes video-loader-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes video-loader-bounce {
+  0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+  40%, 43% { transform: translate3d(0,-8px,0); }
+  70% { transform: translate3d(0,-4px,0); }
+  90% { transform: translate3d(0,-2px,0); }
+}
+
+@keyframes video-loader-fade-in {
+  0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes video-loader-progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Video yükleme bileşeni stilleri */
+.video-loader-container {
+  animation: video-loader-fade-in 0.6s ease-out;
+}
+
+.video-loader-spinner {
+  animation: video-loader-spin 2s linear infinite;
+}
+
+.video-loader-pulse {
+  animation: video-loader-pulse 2s ease-in-out infinite;
+}
+
+.video-loader-bounce {
+  animation: video-loader-bounce 1s ease-in-out infinite;
+}
+
+.video-loader-progress {
+  animation: video-loader-progress 0.3s ease-out;
+}
+
+/* Video yükleme tamamlandığında fade-in efekti */
+.video-fade-in {
+  animation: video-loader-fade-in 1s ease-out;
+}
