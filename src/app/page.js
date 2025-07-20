@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import YonetimSlider from "./components/YonetimSlider";
 import Sertifikalarimiz from "./components/Sertifikalarimiz";
